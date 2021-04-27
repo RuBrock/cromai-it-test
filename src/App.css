@@ -26,7 +26,7 @@ a, a:hover {
 
 /* APP ============================== */
 .container {
-  width: min(90vw, 1000px);
+  width: min(80vw, 1000px);
   margin: 0 auto;
 }
 

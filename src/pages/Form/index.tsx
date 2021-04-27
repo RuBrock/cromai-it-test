@@ -1,6 +1,33 @@
+import { useState } from 'react';
 import './styles.css';
 
-const Form = () => {
+type Props = {
+  onChangeSide: (side: string, sideValue: string) => void;
+}
+
+const Form = ({ onChangeSide }: Props) => {
+  const [aSide, setASide] = useState('');
+  const [bSide, setBSide] = useState('');
+  const [cSide, setCSide] = useState('');
+
+  const handleOnChangeASide = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const inputValue = event.target.value;
+    (bSide === '' || cSide === '') && parseInt(inputValue) > 0 ? setASide(inputValue) : setASide('');
+    onChangeSide('a', inputValue);
+  }
+
+  const handleOnChangeBSide = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const inputValue = event.target.value;
+    (aSide === '' || cSide === '') && parseInt(inputValue) > 0 ? setBSide(inputValue) : setBSide('');
+    onChangeSide('b', inputValue);
+  }
+
+  const handleOnChangeCSide = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const inputValue = event.target.value;
+    (aSide === '' || bSide === '') && parseInt(inputValue) > 0 ? setCSide(inputValue) : setCSide('');
+    onChangeSide('c', inputValue);
+  }
+
   return (
     <div className="form-container">
       <div className="form-content">
@@ -11,17 +38,38 @@ const Form = () => {
           
           <div className="input-group">
             <label htmlFor="a-side-input">a:</label>
-            <input type="number" name="a-side-input" id="a-side-input"/>
+            <input 
+              value={aSide}
+              onChange={handleOnChangeASide}
+              type="number" 
+              min="1"
+              name="a-side-input" 
+              id="a-side-input"
+            />
           </div>
 
           <div className="input-group">
             <label htmlFor="b-side-input">b:</label>
-            <input type="number" name="b-side-input" id="b-side-input"/>
+            <input 
+              value={bSide}
+              onChange={handleOnChangeBSide}
+              type="number" 
+              min="1"
+              name="b-side-input" 
+              id="b-side-input"
+            />
           </div>
 
           <div className="input-group">
             <label htmlFor="c-side-input">c:</label>
-            <input type="number" name="c-side-input" id="c-side-input"/>
+            <input 
+              value={cSide}
+              onChange={handleOnChangeCSide}
+              type="number" 
+              min="1"
+              name="c-side-input" 
+              id="c-side-input"
+            />
           </div>
 
           <div className="input-group">
