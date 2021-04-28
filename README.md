@@ -1,21 +1,21 @@
-# Getting Started with Create React App
+## React + TypeScript
+Projeto de uma cálculadora do Teorema de Pitágoras, utilizando ReactJS com Typescript.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Instalação
 
-## Available Scripts
+Utilize o gerenciador de pacotes de sua escolha (npm, yarn, etc.) e instale as dependências.
 
-In the project directory, you can run:
+```bash
+npm install
+```
 
-### `npm start`
+```bash
+yarn install
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Uso
+Execute o seguinte comando para lançar o projeto
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+npm start
+```
