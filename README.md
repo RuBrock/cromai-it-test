@@ -1,7 +1,7 @@
-## React + TypeScript
+## Calculadora Teorema de Pitágoras
 Projeto de uma cálculadora do Teorema de Pitágoras, utilizando ReactJS com Typescript.
 
-## Instalação
+### Instalação
 
 Utilize o gerenciador de pacotes de sua escolha (npm, yarn, etc.) e instale as dependências.
 
@@ -13,7 +13,7 @@ npm install
 yarn install
 ```
 
-## Uso
+### Uso
 Execute o seguinte comando para lançar o projeto
 
 ```bash
