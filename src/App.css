@@ -35,6 +35,29 @@ a, a:hover {
   margin-top: 4rem;
 }
 
+.result-content {
+  border: 1px solid var(--color-dark);
+  border-radius: 10px;
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.result-content h2 {
+  margin-bottom: 0.8rem;
+  font-size: 1.7rem;
+  font-weight: normal;
+  color: var(--color-dark);
+}
+
+.result-content p {
+  font-size: 1.2rem;
+  font-weight: normal;
+  color: var(--color-dark);
+}
+
 
 /* MOBILE BREAKPOINTS ================= */
 @media (max-width: 768px) {
