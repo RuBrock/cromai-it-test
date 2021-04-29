@@ -39,6 +39,8 @@ const Form = ({ onChangeTriangleSide, onCalcTriangleSides }: Props) => {
 
     if(isNaN(bSideInt) || isNaN(cSideInt)) {
       message = 'A hipotenusa é menor que um dos catetos... Certeza que não é um triângulo retângulo!';
+    } else if(aSideInt === 0 && bSideInt === 0 && cSideInt === 0) {
+      message = 'Com nenhum valor inserido não temos como tirar conclusões aqui, né?';
     } else {
       success = true;
       message = 'De fato, temos um triângulo retângulo aqui. Boa, Pitágoras!';
@@ -65,7 +67,7 @@ const Form = ({ onChangeTriangleSide, onCalcTriangleSides }: Props) => {
     let aSideInt = parseFloat(aSide ? aSide : '0');
     let bSideInt = parseFloat(bSide ? bSide : '0');
     let cSideInt = parseFloat(cSide ? cSide : '0');
-    let result = {};
+    let result = {} as ResultCalc;
 
     if( aSideInt === 0 ) {
       aSideInt = Math.sqrt(Math.pow(bSideInt,2) + Math.pow(cSideInt, 2));
@@ -76,8 +78,8 @@ const Form = ({ onChangeTriangleSide, onCalcTriangleSides }: Props) => {
     }
 
     result = await setResultMessage(aSideInt, bSideInt, cSideInt);
-    await clearFormFields();
-    onCalcTriangleSides(result as ResultCalc);
+    if(result.success) await clearFormFields();
+    onCalcTriangleSides(result);
   }
 
   return (

@@ -43,21 +43,45 @@ a, a:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-bottom: 4rem;
 }
 
-.result-content h2 {
-  margin-bottom: 0.8rem;
-  font-size: 1.7rem;
-  font-weight: normal;
+.result-content-infos, .result-content-message {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.result-content-infos {
+  justify-content: space-around;
+  margin-bottom: 1.3rem;
+}
+
+.result-content-message {
+  justify-content: center;
+}
+
+.result-content-message h2, .result-content-infos h2 {
+  margin-right: 0.9rem;
+  font-size: 1.3rem;
+  font-weight: 600;
   color: var(--color-dark);
 }
 
-.result-content p {
-  font-size: 1.2rem;
-  font-weight: normal;
+.result-content-infos span {
+  display: inline-block;
+  width: 110px;
+  font-size: 1.1rem;
+  font-weight: 600;
   color: var(--color-dark);
 }
 
+.result-content-message p, .result-content-infos p {
+  font-size: 1.1rem;
+  font-weight: normal;
+  color: var(--color-dark);
+}
 
 /* MOBILE BREAKPOINTS ================= */
 @media (max-width: 768px) {

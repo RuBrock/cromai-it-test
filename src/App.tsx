@@ -61,13 +61,20 @@ const App = () => {
           (
             <section className="result-content">
             
-            <h2>RESULTADO: a&#178; = b&#178; + c&#178;</h2>
-            
-            <p><span>hipotenusa:</span> {resultCalc.aSideStr} </p>
-            <p><span>cateto 1:</span> {resultCalc.bSideStr} </p>
-            <p><span>cateto 2:</span> {resultCalc.cSideStr} </p>
+            <div className="result-content-infos">
+              <h2>a&#178; = b&#178; + c&#178;</h2>
+              
+              <div className="result-content-infos-sides">
+                <p> <span>hipotenusa:</span> {resultCalc.aSideStr} </p>
+                <p> <span>cateto 1:</span> {resultCalc.bSideStr} </p>
+                <p> <span>cateto 2:</span> {resultCalc.cSideStr} </p>
+              </div>
+            </div>
 
-            <p>{ resultCalc.message }</p>
+            <div className="result-content-message">
+              <h2>RESULTADO:</h2>
+              <p>{ resultCalc.message }</p>
+            </div>
 
             </section>
           ) 
@@ -76,10 +83,11 @@ const App = () => {
         { !resultCalc.success && resultCalc.message ?
           (
             <section className="result-content">
-            
-            <h2>RESULTADO</h2>
 
-            <p>{ resultCalc.message }</p>
+            <div className="result-content-message">
+              <h2>RESULTADO:</h2>
+              <p>{ resultCalc.message }</p>
+            </div>
 
             </section>
           ) 
